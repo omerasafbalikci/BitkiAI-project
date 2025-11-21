@@ -1,4 +1,7 @@
 package ai.bitki.orchestration.plant.manager;
 
-public class DefaultPlantManager implements PlantManager {
+import ai.bitki.orchestration.common.dto.LifecycleManager;
+import ai.bitki.orchestration.plant.dto.PlantComponent;
+
+public class DefaultPlantManager implements LifecycleManager<PlantComponent> {
 }
