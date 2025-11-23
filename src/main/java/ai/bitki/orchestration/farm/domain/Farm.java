@@ -2,101 +2,114 @@ package ai.bitki.orchestration.farm.domain;
 
 import ai.bitki.orchestration.farm.dto.ClimateZone;
 import ai.bitki.orchestration.farm.dto.SoilType;
+import jakarta.persistence.*;
 
+
+@Entity
+@Table(name = "farms")
 public class Farm {
 
-  private String id;
-  private long createdAt;
-  private long updatedAt;
-  private String name;
-  private SoilType soilType;
-  private ClimateZone climateZone;
-  private Double latitude;
-  private Double longitude;
-  private Double areaSize;
+    @Id
+    private String id;
+    private long createdAt;
+    private long updatedAt;
+    private String name;
 
-  public Farm(String id, long createdAt, long updatedAt, String name, SoilType soilType, ClimateZone climateZone,
-              Double latitude, Double longitude, Double areaSize) {
-    this.id = id;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
-    this.name = name;
-    this.soilType = soilType;
-    this.climateZone = climateZone;
-    this.latitude = latitude;
-    this.longitude = longitude;
-    this.areaSize = areaSize;
-  }
+    @Enumerated(EnumType.STRING)
+    private SoilType soilType;
 
-  public String getId() {
-    return this.id;
-  }
+    @Enumerated(EnumType.STRING)
+    private ClimateZone climateZone;
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    private Double latitude;
+    private Double longitude;
+    private Double areaSize;
 
-  public long getCreatedAt() {
-    return this.createdAt;
-  }
 
-  public void setCreatedAt(long createdAt) {
-    this.createdAt = createdAt;
-  }
+    public Farm(){}
 
-  public long getUpdatedAt() {
-    return this.updatedAt;
-  }
+    public Farm(String id, long createdAt, long updatedAt, String name, SoilType soilType, ClimateZone climateZone,
+                Double latitude, Double longitude, Double areaSize) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.name = name;
+        this.soilType = soilType;
+        this.climateZone = climateZone;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.areaSize = areaSize;
+    }
 
-  public void setUpdatedAt(long updatedAt) {
-    this.updatedAt = updatedAt;
-  }
+    public String getId() {
+        return this.id;
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public long getCreatedAt() {
+        return this.createdAt;
+    }
 
-  public SoilType getSoilType() {
-    return this.soilType;
-  }
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
+    }
 
-  public void setSoilType(SoilType soilType) {
-    this.soilType = soilType;
-  }
+    public long getUpdatedAt() {
+        return this.updatedAt;
+    }
 
-  public ClimateZone getClimateZone() {
-    return this.climateZone;
-  }
+    public void setUpdatedAt(long updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
-  public void setClimateZone(ClimateZone climateZone) {
-    this.climateZone = climateZone;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public Double getLatitude() {
-    return this.latitude;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setLatitude(Double latitude) {
-    this.latitude = latitude;
-  }
+    public SoilType getSoilType() {
+        return this.soilType;
+    }
 
-  public Double getLongitude() {
-    return this.longitude;
-  }
+    public void setSoilType(SoilType soilType) {
+        this.soilType = soilType;
+    }
 
-  public void setLongitude(Double longitude) {
-    this.longitude = longitude;
-  }
+    public ClimateZone getClimateZone() {
+        return this.climateZone;
+    }
 
-  public Double getAreaSize() {
-    return this.areaSize;
-  }
+    public void setClimateZone(ClimateZone climateZone) {
+        this.climateZone = climateZone;
+    }
 
-  public void setAreaSize(Double areaSize) {
-    this.areaSize = areaSize;
-  }
+    public Double getLatitude() {
+        return this.latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return this.longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getAreaSize() {
+        return this.areaSize;
+    }
+
+    public void setAreaSize(Double areaSize) {
+        this.areaSize = areaSize;
+    }
 }
